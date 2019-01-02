@@ -34,6 +34,7 @@ namespace Test_GUI
             }
         }
 
+        //Helper method for error trapping input boxes
         private bool isOnlyDigit(string s)
         {
             foreach (char c in s)
