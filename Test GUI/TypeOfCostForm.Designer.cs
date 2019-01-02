@@ -74,12 +74,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Month";
-            this.columnHeader1.Width = 76;
+            this.columnHeader1.Width = 118;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Cost";
-            this.columnHeader2.Width = 78;
+            this.columnHeader2.Width = 176;
             // 
             // button1
             // 

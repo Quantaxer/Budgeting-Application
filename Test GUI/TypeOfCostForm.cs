@@ -19,6 +19,7 @@ namespace Test_GUI
             InitializeComponent();
         }
 
+        //Overloaded constructor which takes in a TypeOfCost class to be used by the form
         public TypeOfCostForm(TypeOfCost x)
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace Test_GUI
             updateListView();
         }
 
+        //Helper function which updates the screen to show the correct information
         public void updateListView()
         {
             listView1.Items.Clear();
@@ -38,12 +40,14 @@ namespace Test_GUI
             }
         }
 
+        //Button which adds an element to the list
         private void button1_Click(object sender, EventArgs e)
         {
             listToEdit.Add(Interaction.InputBox("Please enter the month"), Convert.ToDouble(Interaction.InputBox("Please enter the amount of money")));
             updateListView();
         }
 
+        //Button which edits an element in the list
         private void button2_Click(object sender, EventArgs e)
         {
             string toEdit = Interaction.InputBox("Enter the element you want to change the cost of");
@@ -53,13 +57,16 @@ namespace Test_GUI
                 {
                     listToEdit[toEdit] = Convert.ToDouble(Interaction.InputBox("Enter the new cost"));
                     updateListView();
+                    //Quits if the item was found
                     return;
                 }
             }
+            //If the item was not found, display an error
             MessageBox.Show("ERROR: element not found");
             updateListView();
         }
 
+        //Deletes an element from the list
         private void button3_Click(object sender, EventArgs e)
         {
             string toRemove = Interaction.InputBox("Please enter the item you want to delete");
@@ -69,9 +76,11 @@ namespace Test_GUI
                 {
                     listToEdit.Remove(item.Key);
                     updateListView();
+                    //IF the element was found, exit
                     return;
                 }
             }
+            //If the element was not found, display an error
             MessageBox.Show("ERROR: item not found");
             updateListView();
         }

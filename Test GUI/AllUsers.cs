@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Test_GUI
 {
     [Serializable]
+    //This class serves as a collection of users
     public class AllUsers
     {
         private List<User> listOfAllUsers;
@@ -15,17 +16,20 @@ namespace Test_GUI
             listOfAllUsers = new List<User>();
         }
 
+        //Overridden tostring method
         public override string ToString()
         {
             return string.Join(",", listOfAllUsers.ToString());
         }
 
-        public void AddUser(User x)
+        //Utility function to add a user
+        public void addUser(User x)
         {
             listOfAllUsers.Add(x);
         }
 
-        public void RemoveUser(User x)
+        //Utility function to remove a user
+        public void removeUser(User x)
         {
             if (listOfAllUsers.Contains(x))
             {
@@ -33,11 +37,12 @@ namespace Test_GUI
             }
         }
 
-        public User FindUser(String first, String last)
+        //Utility function to fins a user in the list. Returns null if it doesn't exist
+        public User findUser(String first, String last)
         {
             foreach(User x in listOfAllUsers)
             {
-                if ((x.GetFirstName().Equals(first)) && (x.GetLastName().Equals(last)))
+                if ((x.getFirstName().Equals(first)) && (x.getLastName().Equals(last)))
                 {
                     return x;
                 }
@@ -45,11 +50,13 @@ namespace Test_GUI
             return null;
         }
 
+        //Getter for the list of all users
         public List<User> getList()
         {
             return listOfAllUsers;
         }
 
+        //Utility function to reset the state of the program
         public void resetState()
         {
             listOfAllUsers.Clear();
