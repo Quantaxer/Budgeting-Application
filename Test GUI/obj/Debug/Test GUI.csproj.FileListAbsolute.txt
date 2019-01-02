@@ -1,0 +1,12 @@
+C:\Users\pah98\source\repos\Test GUI\Test GUI\bin\Debug\Test GUI.exe.config
+C:\Users\pah98\source\repos\Test GUI\Test GUI\bin\Debug\Test GUI.exe
+C:\Users\pah98\source\repos\Test GUI\Test GUI\bin\Debug\Test GUI.pdb
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test GUI.csprojAssemblyReference.cache
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test_GUI.Form1.resources
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test_GUI.Properties.Resources.resources
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test GUI.csproj.GenerateResource.cache
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test GUI.csproj.CoreCompileInputs.cache
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test GUI.exe
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test GUI.pdb
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test_GUI.allUserForm.resources
+C:\Users\pah98\source\repos\Test GUI\Test GUI\obj\Debug\Test_GUI.TypeOfCostForm.resources
