@@ -28,6 +28,19 @@ namespace Test_GUI
             updateListView();
         }
 
+        //Helper method for error trapping input boxes
+        private bool isOnlyDigit(string s)
+        {
+            foreach (char c in s)
+            {
+                if (c < '0' || c > '9')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         //Helper function which updates the screen to show the correct information
         public void updateListView()
         {
@@ -43,7 +56,18 @@ namespace Test_GUI
         //Button which adds an element to the list
         private void button1_Click(object sender, EventArgs e)
         {
-            listToEdit.Add(Interaction.InputBox("Please enter the month"), Convert.ToDouble(Interaction.InputBox("Please enter the amount of money")));
+            string month = Interaction.InputBox("Please enter the month");
+            string amount = Interaction.InputBox("Please enter the amount of money");
+            //Checks whether or not the number is actually a number
+            if (isOnlyDigit(amount))
+            {
+                listToEdit.Add(month, Convert.ToDouble(amount));
+            }
+            //Otherwise display an error
+            else
+            {
+                MessageBox.Show("ERROR: Not a valid number");
+            }
             updateListView();
         }
 
@@ -55,8 +79,18 @@ namespace Test_GUI
             {
                 if (item.Key.Equals(toEdit))
                 {
-                    listToEdit[toEdit] = Convert.ToDouble(Interaction.InputBox("Enter the new cost"));
-                    updateListView();
+                    string amount = Interaction.InputBox("Enter the new cost");
+                    //Check if the user inputted a valid number
+                    if (isOnlyDigit(amount))
+                    {
+                        listToEdit[toEdit] = Convert.ToDouble(amount);
+                        updateListView();
+                    }
+                    //Otherwise display an error
+                    else
+                    {
+                        MessageBox.Show("ERROR: Not a valid number");
+                    }
                     //Quits if the item was found
                     return;
                 }
@@ -76,7 +110,7 @@ namespace Test_GUI
                 {
                     listToEdit.Remove(item.Key);
                     updateListView();
-                    //IF the element was found, exit
+                    //If the element was found, exit
                     return;
                 }
             }
