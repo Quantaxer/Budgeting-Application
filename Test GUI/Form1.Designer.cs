@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.saveStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +68,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.allUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allUsersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,9 +211,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(656, 612);
+            this.button1.Location = new System.Drawing.Point(654, 612);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(399, 29);
+            this.button1.Size = new System.Drawing.Size(401, 29);
             this.button1.TabIndex = 4;
             this.button1.Text = "Create new Expense";
             this.button1.UseVisualStyleBackColor = true;
@@ -240,9 +252,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(661, 647);
+            this.button2.Location = new System.Drawing.Point(654, 647);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(194, 23);
+            this.button2.Size = new System.Drawing.Size(201, 23);
             this.button2.TabIndex = 9;
             this.button2.Text = "Rename element";
             this.button2.UseVisualStyleBackColor = true;
@@ -358,6 +370,60 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "$0.00";
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(315, 454);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Type of Expense";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(246, 187);
+            this.chart1.TabIndex = 21;
+            this.chart1.Text = "chart1";
+            // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(21, 454);
+            this.chart2.Name = "chart2";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Type of Revenue";
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(260, 187);
+            this.chart2.TabIndex = 22;
+            this.chart2.Text = "chart2";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label8.Location = new System.Drawing.Point(311, 427);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 24);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Expenses";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label9.Location = new System.Drawing.Point(17, 427);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 24);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Revenues";
+            // 
             // allUsersBindingSource
             // 
             this.allUsersBindingSource.DataSource = typeof(Test_GUI.AllUsers);
@@ -368,6 +434,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1096, 720);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -389,9 +459,11 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.allUsersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -433,6 +505,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem resetStateToolStripMenuItem;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 

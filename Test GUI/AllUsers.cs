@@ -20,12 +20,12 @@ namespace Test_GUI
             return string.Join(",", listOfAllUsers.ToString());
         }
 
-        public void AddUser(User x)
+        public void addUser(User x)
         {
             listOfAllUsers.Add(x);
         }
 
-        public void RemoveUser(User x)
+        public void removeUser(User x)
         {
             if (listOfAllUsers.Contains(x))
             {
@@ -33,11 +33,11 @@ namespace Test_GUI
             }
         }
 
-        public User FindUser(String first, String last)
+        public User findUser(String first, String last)
         {
             foreach(User x in listOfAllUsers)
             {
-                if ((x.GetFirstName().Equals(first)) && (x.GetLastName().Equals(last)))
+                if ((x.getFirstName().Equals(first)) && (x.getLastName().Equals(last)))
                 {
                     return x;
                 }

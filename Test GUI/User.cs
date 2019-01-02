@@ -32,22 +32,22 @@ namespace Test_GUI
             return firstName + " " + lastName;
         }
 
-        public String GetFirstName()
+        public String getFirstName()
         {
             return firstName;
         }
 
-        public String GetLastName()
+        public String getLastName()
         {
             return lastName;
         }
 
-        public void SetFirstName(String first)
+        public void setFirstName(String first)
         {
             firstName = first;
         }
 
-        public void SetLastName(String last)
+        public void setLastName(String last)
         {
             lastName = last;
         }

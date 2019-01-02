@@ -25,6 +25,7 @@ namespace Test_GUI
             listToEdit = x.returnDict();
             label2.Text = x.getType();
             updateListView();
+            
         }
 
         public void updateListView()

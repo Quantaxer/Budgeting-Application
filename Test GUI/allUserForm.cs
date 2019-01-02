@@ -29,8 +29,8 @@ namespace Test_GUI
             listView1.Items.Clear();
             foreach (User x in temp.getList())
             {
-                ListViewItem lvi = new ListViewItem(x.GetFirstName());
-                lvi.SubItems.Add(x.GetLastName());
+                ListViewItem lvi = new ListViewItem(x.getFirstName());
+                lvi.SubItems.Add(x.getLastName());
                 listView1.Items.Add(lvi);
             }
         }

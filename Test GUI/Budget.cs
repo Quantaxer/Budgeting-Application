@@ -87,7 +87,7 @@ namespace Test_GUI
             return total / allRevenue.Count;
         }
 
-    public double calculateBudgetBeforePercentage()
+        public double calculateBudgetBeforePercentage()
         {
             return calculateTotalRevenue() - calculateTotalExpenses();
         }
