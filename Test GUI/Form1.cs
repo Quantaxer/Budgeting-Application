@@ -75,6 +75,10 @@ namespace Test_GUI
         private void switchUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             currentUser = listOfUsers.findUser(Interaction.InputBox("Please enter your first name"), Interaction.InputBox("Please enter your last name"));
+            if (currentUser == null)
+            {
+                MessageBox.Show("ERROR: User not found");
+            }
             updateAll();
         }
 
@@ -87,7 +91,7 @@ namespace Test_GUI
         }
 
         //Utility function to update the main screen
-        private void updateAll()
+        public void updateAll()
         {
             if (currentUser != null)
             {
@@ -192,9 +196,13 @@ namespace Test_GUI
                 //Initialize the lists and append the values
                 foreach (TypeOfCost item in currentUser.getBudget().getAllExpenses())
                 {
-                    expenseNameList[i] = item.getType();
-                    expensePercentList[i] = item.calculateAverage() / currentUser.getBudget().calculateTotalExpenses() * 100;
-                    i++;
+                    double temp = item.calculateAverage() / currentUser.getBudget().calculateTotalExpenses() * 100;
+                    if (temp != 0)
+                    {
+                        expenseNameList[i] = item.getType();
+                        expensePercentList[i] = temp;
+                        i++;
+                    }
                 }
                 //Bind the values to the pie chart, then change the labels
                 chart1.Series["Type of Expense"].Points.DataBindXY(expenseNameList, expensePercentList);
@@ -208,9 +216,14 @@ namespace Test_GUI
                 //Initialize the lists and append the values
                 foreach (TypeOfCost item in currentUser.getBudget().getAllRevenue())
                 {
-                    revenueNameList[i] = item.getType();
-                    revenuePercentList[i] = item.calculateAverage() / currentUser.getBudget().calculateTotalExpenses() * 100;
-                    i++;
+                    double temp = item.calculateAverage() / currentUser.getBudget().calculateTotalRevenue() * 100;
+                    if (temp != 0)
+                    {
+                        revenueNameList[i] = item.getType();
+                        revenuePercentList[i] = temp;
+                        i++;
+                    }
+                    
                 }
                 //Bind the values to the pie chart and update the labels
                 chart2.Series["Type of Revenue"].Points.DataBindXY(revenueNameList, revenuePercentList);
@@ -320,7 +333,7 @@ namespace Test_GUI
             AllUsers tempUsers = listOfUsers;
 
             allUserForm userForm = new allUserForm(listOfUsers);
-            userForm.Show();
+            userForm.ShowDialog();
         }
 
         //Delete an expense from the list
@@ -369,8 +382,8 @@ namespace Test_GUI
             if (listView2.SelectedItems.Count > 0)
             {
                 TypeOfCost foo = (TypeOfCost)listView2.SelectedItems[0].Tag;
-                TypeOfCostForm temp = new TypeOfCostForm(foo);
-                temp.Show();
+                TypeOfCostForm temp = new TypeOfCostForm(foo, this);
+                temp.ShowDialog();
             }
         }
 
@@ -380,8 +393,8 @@ namespace Test_GUI
             if (listView3.SelectedItems.Count > 0)
             {
                 TypeOfCost foo = (TypeOfCost)listView3.SelectedItems[0].Tag;
-                TypeOfCostForm temp = new TypeOfCostForm(foo);
-                temp.Show();
+                TypeOfCostForm temp = new TypeOfCostForm(foo, this);
+                temp.ShowDialog();
             }
         }
 

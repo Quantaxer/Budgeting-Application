@@ -14,16 +14,18 @@ namespace Test_GUI
     public partial class TypeOfCostForm : Form
     {
         Dictionary<string, double> listToEdit;
+        private Form1 parentForm;
         public TypeOfCostForm()
         {
             InitializeComponent();
         }
 
         //Overloaded constructor which takes in a TypeOfCost class to be used by the form
-        public TypeOfCostForm(TypeOfCost x)
+        public TypeOfCostForm(TypeOfCost x, Form1 parent)
         {
             InitializeComponent();
             listToEdit = x.returnDict();
+            parentForm = parent;
             label2.Text = x.getType();
             updateListView();
         }
@@ -51,6 +53,7 @@ namespace Test_GUI
                 lvi.SubItems.Add(Convert.ToString(item.Value));
                 listView1.Items.Add(lvi);
             }
+            parentForm.updateAll();
         }
 
         //Button which adds an element to the list

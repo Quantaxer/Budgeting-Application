@@ -172,7 +172,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F);
-            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 31);
             this.label1.TabIndex = 1;
@@ -189,6 +189,7 @@
             this.listView2.Location = new System.Drawing.Point(654, 390);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(401, 216);
+            this.listView2.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView2.TabIndex = 3;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -207,7 +208,7 @@
             // Percentage
             // 
             this.Percentage.Text = "Percent of expenses";
-            this.Percentage.Width = 134;
+            this.Percentage.Width = 136;
             // 
             // button1
             // 
@@ -230,6 +231,7 @@
             this.listView3.Location = new System.Drawing.Point(654, 67);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(401, 216);
+            this.listView3.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView3.TabIndex = 8;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.Details;
@@ -254,7 +256,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(654, 647);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(201, 23);
+            this.button2.Size = new System.Drawing.Size(194, 23);
             this.button2.TabIndex = 9;
             this.button2.Text = "Rename element";
             this.button2.UseVisualStyleBackColor = true;
@@ -364,7 +366,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label7.Location = new System.Drawing.Point(800, 363);
+            this.label7.Location = new System.Drawing.Point(793, 363);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 24);
             this.label7.TabIndex = 20;
@@ -372,6 +374,9 @@
             // 
             // chart1
             // 
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -383,12 +388,16 @@
             series1.Legend = "Legend1";
             series1.Name = "Type of Expense";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(246, 187);
+            this.chart1.Size = new System.Drawing.Size(260, 187);
             this.chart1.TabIndex = 21;
             this.chart1.Text = "chart1";
             // 
             // chart2
             // 
+            this.chart2.BackColor = System.Drawing.Color.Transparent;
+            this.chart2.BorderlineColor = System.Drawing.Color.Black;
+            this.chart2.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chart2.BorderSkin.BackColor = System.Drawing.Color.Silver;
             chartArea2.Name = "ChartArea1";
             this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -410,9 +419,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.label8.Location = new System.Drawing.Point(311, 427);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 24);
+            this.label8.Size = new System.Drawing.Size(135, 24);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Expenses";
+            this.label8.Text = "Expense Chart";
             // 
             // label9
             // 
@@ -420,9 +429,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.label9.Location = new System.Drawing.Point(17, 427);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 24);
+            this.label9.Size = new System.Drawing.Size(136, 24);
             this.label9.TabIndex = 24;
-            this.label9.Text = "Revenues";
+            this.label9.Text = "Revenue Chart";
             // 
             // allUsersBindingSource
             // 
@@ -433,7 +442,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1096, 720);
+            this.ClientSize = new System.Drawing.Size(1096, 738);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.chart2);
@@ -458,7 +467,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Main";
+            this.Text = "Budget Boi";
             this.Load += new System.EventHandler(this.form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
